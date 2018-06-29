@@ -53,5 +53,14 @@
             _loggerOptions.ShowResponseTime = true;
             return this;
         }
+
+        /// <summary>
+        /// Generate the logger options from the builder
+        /// </summary>
+        /// <returns>The logger options</returns>
+        public LoggerOptions Build()
+        {
+            return _loggerOptions;
+        }
     }
 }
