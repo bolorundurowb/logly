@@ -4,6 +4,9 @@ using System.Text;
 using System.Threading.Tasks;
 using logly.Infrastructure;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace logly
 {
@@ -11,9 +14,9 @@ namespace logly
     {
         internal static LoggerOptions LoggerOptions { get; set; }
         private readonly RequestDelegate _next;
-        private readonly ILogger<LoggingMiddleware> _logger;
+        private readonly ILogger<Logly> _logger;
 
-        public Logly(RequestDelegate next, ILogger<LoggingMiddleware> logger)
+        public Logly(RequestDelegate next, ILogger<Logly> logger)
         {
             _next = next;
             _logger = logger;
