@@ -1,7 +1,12 @@
-﻿namespace logly.Logging
+﻿using logly.Models;
+
+namespace logly.Logging
 {
-    public class Logger
+    internal class Logger
     {
-        
+        public void Log(Request request, Response response)
+        {
+            
+        }
     }
 }
