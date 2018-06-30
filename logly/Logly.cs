@@ -71,7 +71,7 @@ namespace logly
         {
             return new Response
             {
-                StatusScode = response.StatusCode,
+                StatusCode = response.StatusCode,
                 ResponseLength = response.Body.Length
             };
         }
