@@ -52,7 +52,7 @@ namespace logly.Logging
             if (loggerOptions.ShowStatusCode)
             {
                 Console.ForegroundColor = response.StatusCodeColor;
-                Console.WriteLine(" " + response.StatusCode);
+                Console.Write(" " + response.StatusCode);
             }
             else
             {
@@ -62,7 +62,7 @@ namespace logly.Logging
             Console.ForegroundColor = consoleColorStash;
             if (loggerOptions.ShowResponseTime)
             {
-                Console.Write(" " + response.ResponseTime + " ms");
+                Console.Write(" - " + response.ResponseTime + " ms");
             }
             else
             {
