@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Copyright>Winner-Timothy Bolorunduro 2018</Copyright>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
     <Authors>Bolorunduro Winner-Timothy</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>logly</PackageId>
-    <Description>A library to log request and response data much like morgan for javascript</Description>
+    <Description>A library to log request and response data in the format of morgan for NodeJS</Description>
     <PackageIconUrl>http://chittagongit.com//images/data-log-icon/data-log-icon-14.jpg</PackageIconUrl>
     <PackageProjectUrl>https://github.com/bolorundurowb/logly/blob/master/README.md</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/bolorundurowb/logly/blob/master/LICENSE</PackageLicenseUrl>
