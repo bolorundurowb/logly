@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using logly.Models;
 
 namespace logly.Logging
@@ -29,25 +30,49 @@ namespace logly.Logging
             }
 
             var loggerOptions = Logly.LoggerOptions;
-            var consoleColorStash = Console.ForegroundColor;
 
+            // create the anterior data to be displayed
+            var anteriorOutputBuilder = new StringBuilder();
             if (loggerOptions.ShowRequestMethod)
             {
-                Console.Write(request.Method.ToUpperInvariant());
+                anteriorOutputBuilder.Append(request.Method.ToUpperInvariant());
             }
             else
             {
-                Console.Write("-");
+                anteriorOutputBuilder.Append("-");
             }
 
             if (loggerOptions.ShowUrl)
             {
-                Console.Write(" " + request.Url);
+                anteriorOutputBuilder.Append(" " + request.Url);
             }
             else
             {
-                Console.Write(" -");
+                anteriorOutputBuilder.Append(" -");
             }
+
+            // create the posterior data to be displayed
+            var posteriorOutputBuilder = new StringBuilder();
+            if (loggerOptions.ShowResponseTime)
+            {
+                posteriorOutputBuilder.Append(" - " + response.ResponseTime + " ms");
+            }
+            else
+            {
+                posteriorOutputBuilder.Append(" -");
+            }
+
+            if (loggerOptions.ShowResponseLength)
+            {
+                posteriorOutputBuilder.Append(" " + response.ResponseLength + " bytes");
+            }
+            else
+            {
+                posteriorOutputBuilder.Append(" -");
+            }
+
+            Console.Write(anteriorOutputBuilder.ToString());
+            var consoleColorStash = Console.ForegroundColor;
 
             if (loggerOptions.ShowStatusCode)
             {
@@ -60,26 +85,10 @@ namespace logly.Logging
             }
 
             Console.ForegroundColor = consoleColorStash;
-            if (loggerOptions.ShowResponseTime)
-            {
-                Console.Write(" - " + response.ResponseTime + " ms");
-            }
-            else
-            {
-                Console.Write(" -");
-            }
-            
-            if (loggerOptions.ShowResponseLength)
-            {
-                Console.Write(" " + response.ResponseLength + " bytes");
-            }
-            else
-            {
-                Console.Write(" -");
-            }
-            
-            // move to next line
-            Console.WriteLine();
+            Console.WriteLine(posteriorOutputBuilder.ToString());
+
+            anteriorOutputBuilder.Clear();
+            posteriorOutputBuilder.Clear();
         }
     }
 }
