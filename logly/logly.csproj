@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Version>1.0.1</Version>
-    <Copyright>Winner-Timothy Bolorunduro 2018</Copyright>
+    <Copyright>Winner-Timothy Bolorunduro &#169; 2019</Copyright>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
     <Authors>Bolorunduro Winner-Timothy</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -12,7 +12,9 @@
     <PackageProjectUrl>https://github.com/bolorundurowb/logly/blob/master/README.md</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/bolorundurowb/logly/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/bolorundurowb/logly</RepositoryUrl>
-    <Tags>log logly logger asp.net core morgan</Tags>
+    <Tags>log,logly,logger,asp.net,core,morgan</Tags>
+    <Summary>Add support for queyr options on GET requests.</Summary>
+    <Title>Logly</Title>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.0" />
