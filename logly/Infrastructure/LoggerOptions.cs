@@ -5,7 +5,7 @@
         /// <summary>
         /// Whether or not the request method should be logged
         /// </summary>
-        public bool ShowRequestMethod { get;  internal set; }
+        public bool ShowRequestMethod { get; internal set; }
 
         /// <summary>
         /// Whether or not the request Url should be logged
