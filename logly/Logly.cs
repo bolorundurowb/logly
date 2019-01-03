@@ -77,7 +77,7 @@ namespace logly
         {
             return new Request
             {
-                Url = request.Path,
+                Url = $"{request.Path}{request.QueryString}",
                 Method = request.Method
             };
         }
