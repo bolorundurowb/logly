@@ -70,9 +70,12 @@ namespace logly.Logging
             {
                 posteriorOutputBuilder.Append(" -");
             }
-
-            Console.Write(anteriorOutputBuilder.ToString());
+            
+            // stash the foreground colour
             var consoleColorStash = Console.ForegroundColor;
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(anteriorOutputBuilder.ToString());
 
             if (loggerOptions.ShowStatusCode)
             {
@@ -84,8 +87,11 @@ namespace logly.Logging
                 Console.Write(" -");
             }
 
-            Console.ForegroundColor = consoleColorStash;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(posteriorOutputBuilder.ToString());
+            
+            // restore the foreground colour
+            Console.ForegroundColor = consoleColorStash;
 
             anteriorOutputBuilder.Clear();
             posteriorOutputBuilder.Clear();
