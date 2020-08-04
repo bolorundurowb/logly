@@ -25,10 +25,10 @@ namespace logly.Extensions
         }
         
         /// <summary>
-        /// Add loggic using settings specified by the end user
+        /// Add logic using settings specified by the end user
         /// </summary>
         /// <param name="builder">The application builder instance</param>
-        /// <param name="action">An  optiins builder action</param>
+        /// <param name="action">An  options builder action</param>
         /// <returns>The application builder instance</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static IApplicationBuilder UseLogly(this IApplicationBuilder builder, Action<LoggerOptionsBuilder> action)

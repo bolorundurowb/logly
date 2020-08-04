@@ -5,7 +5,9 @@ namespace logly.Models
     internal class Response
     {
         public int StatusCode { get; set; }
+
         public long ResponseLength { get; set; }
+
         public double ResponseTime { get; set; }
 
         public ConsoleColor StatusCodeColor
