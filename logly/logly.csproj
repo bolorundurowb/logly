@@ -16,12 +16,12 @@
     <Tags>log,logly,logger,asp.net,core,morgan</Tags>
     <Summary>Add support for queyr options on GET requests.</Summary>
     <Title>Logly</Title>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <RepositoryType>git</RepositoryType>
     <PackageTags>logger http-logger morgan logly</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
     <TargetFrameworks>netcoreapp1.0;netcoreapp1.1;netcoreapp2.1;netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
 
