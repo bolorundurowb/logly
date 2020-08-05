@@ -19,8 +19,8 @@ namespace logly.Extensions
             return UseLogly(builder, opts =>
                 opts
                     .AddRequestMethod()
+                    .AddUrl()
                     .AddStatusCode()
-                    .AddResponseTime()
             );
         }
         

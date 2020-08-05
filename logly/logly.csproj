@@ -22,7 +22,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <FileVersion>1.1.0.0</FileVersion>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp1.0;netcoreapp1.1;netcoreapp2.1;netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
@@ -36,6 +36,18 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
-        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.3" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp1.1'">
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.2" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp1.0'">
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.0.4" />
     </ItemGroup>
 </Project>
