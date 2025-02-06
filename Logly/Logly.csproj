@@ -3,7 +3,7 @@
         <Version>2.0.0</Version>
         <Authors>Bolorunduro Winner-Timothy</Authors>
         <Description>A library to log request and response data in the format of morgan for NodeJS</Description>
-        <PackageId>logly</PackageId>
+        <PackageId>Logly</PackageId>
         <PackageTags>log,logly,logger,asp.net,core,morgan</PackageTags>
         <PackageProjectUrl>https://github.com/bolorundurowb/logly/blob/master/README.md</PackageProjectUrl>
         <RepositoryUrl>https://github.com/bolorundurowb/logly</RepositoryUrl>
@@ -19,6 +19,8 @@
         </PackageReleaseNotes>
         <Copyright>©2020-2025, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <AssemblyName>Logly</AssemblyName>
+        <RootNamespace>Logly</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
