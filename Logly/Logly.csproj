@@ -21,6 +21,8 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <AssemblyName>Logly</AssemblyName>
         <RootNamespace>Logly</RootNamespace>
+        <Title>Logly</Title>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

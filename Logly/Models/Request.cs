@@ -1,9 +1,8 @@
-﻿namespace Logly.Models
-{
-    internal class Request
-    {
-        public string Method { get; set; }
+﻿namespace Logly.Models;
 
-        public string Url { get; set; }
-    }
+internal class Request
+{
+    public string Method { get; set; }
+
+    public string Url { get; set; }
 }

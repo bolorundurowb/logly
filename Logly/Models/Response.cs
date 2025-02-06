@@ -1,39 +1,38 @@
-﻿namespace Logly.Models
+﻿namespace Logly.Models;
+
+internal class Response
 {
-    internal class Response
+    public int StatusCode { get; set; }
+
+    public long ResponseLength { get; set; }
+
+    public double ResponseTime { get; set; }
+
+    public ConsoleColor StatusCodeColor
     {
-        public int StatusCode { get; set; }
-
-        public long ResponseLength { get; set; }
-
-        public double ResponseTime { get; set; }
-
-        public ConsoleColor StatusCodeColor
+        get
         {
-            get
+            if (StatusCode < 200)
             {
-                if (StatusCode < 200)
-                {
-                    return ConsoleColor.White;
-                }
-
-                if (StatusCode >= 200 && StatusCode < 300)
-                {
-                    return ConsoleColor.Green;
-                }
-
-                if (StatusCode >= 300 && StatusCode < 400)
-                {
-                    return ConsoleColor.DarkBlue;
-                }
-
-                if (StatusCode >= 400 && StatusCode < 500)
-                {
-                    return ConsoleColor.Yellow;
-                }
-
-                return ConsoleColor.Red;
+                return ConsoleColor.White;
             }
+
+            if (StatusCode >= 200 && StatusCode < 300)
+            {
+                return ConsoleColor.Green;
+            }
+
+            if (StatusCode >= 300 && StatusCode < 400)
+            {
+                return ConsoleColor.DarkBlue;
+            }
+
+            if (StatusCode >= 400 && StatusCode < 500)
+            {
+                return ConsoleColor.Yellow;
+            }
+
+            return ConsoleColor.Red;
         }
     }
 }
