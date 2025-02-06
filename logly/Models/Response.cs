@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace logly.Models
+﻿namespace logly.Models
 {
     internal class Response
     {

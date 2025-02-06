@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using logly.Models;
 
 namespace logly.Logging
@@ -14,9 +13,9 @@ namespace logly.Logging
         /// <exception cref="ArgumentNullException">If the logger config, request or response is null</exception>
         public void Log(Request request, Response response)
         {
-            if (Logly.LoggerOptions == null)
+            if (LoglyMiddleware.LoggerOptions == null)
             {
-                throw new ArgumentNullException(nameof(Logly.LoggerOptions));
+                throw new ArgumentNullException(nameof(LoglyMiddleware.LoggerOptions));
             }
 
             if (request == null)
@@ -29,7 +28,7 @@ namespace logly.Logging
                 throw new ArgumentNullException(nameof(response));
             }
 
-            var loggerOptions = Logly.LoggerOptions;
+            var loggerOptions = LoglyMiddleware.LoggerOptions;
 
             // create the anterior data to be displayed
             var anteriorOutputBuilder = new StringBuilder();

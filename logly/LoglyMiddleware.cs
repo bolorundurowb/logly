@@ -1,6 +1,4 @@
 ﻿using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
 using logly.Infrastructure;
 using logly.Logging;
 using logly.Models;
@@ -11,13 +9,13 @@ namespace logly
     /// <summary>
     /// Request and Response logging middleware
     /// </summary>
-    public class Logly
+    public class LoglyMiddleware
     {
         internal static LoggerOptions LoggerOptions { get; set; }
         private readonly RequestDelegate _next;
         private readonly Logger _logger;
 
-        public Logly(RequestDelegate next)
+        public LoglyMiddleware(RequestDelegate next)
         {
             _next = next;
             _logger = new Logger();

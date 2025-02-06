@@ -1,5 +1,4 @@
-﻿using System;
-using logly.Infrastructure;
+﻿using logly.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 
 namespace logly.Extensions
@@ -46,9 +45,9 @@ namespace logly.Extensions
             var optionsBuilder = new LoggerOptionsBuilder();
             action(optionsBuilder);
 
-            Logly.LoggerOptions = optionsBuilder.Build();
+            LoglyMiddleware.LoggerOptions = optionsBuilder.Build();
 
-            return builder.UseMiddleware<Logly>();
+            return builder.UseMiddleware<LoglyMiddleware>();
         }
     }
 }
