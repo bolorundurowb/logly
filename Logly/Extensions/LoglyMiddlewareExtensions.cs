@@ -1,7 +1,7 @@
-﻿using logly.Infrastructure;
+﻿using Logly.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 
-namespace logly.Extensions
+namespace Logly.Extensions
 {
     /// <summary>
     /// ASP.NET Core extensions to enable logly

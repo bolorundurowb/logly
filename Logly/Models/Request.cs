@@ -1,4 +1,4 @@
-﻿namespace logly.Models
+﻿namespace Logly.Models
 {
     internal class Request
     {

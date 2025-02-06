@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
-using logly.Infrastructure;
-using logly.Logging;
-using logly.Models;
+using Logly.Infrastructure;
+using Logly.Logging;
+using Logly.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace logly
+namespace Logly
 {
     /// <summary>
     /// Request and Response logging middleware

@@ -1,4 +1,4 @@
-﻿namespace logly.Infrastructure
+﻿namespace Logly.Infrastructure
 {
     public class LoggerOptionsBuilder
     {

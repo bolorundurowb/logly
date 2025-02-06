@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using logly.Models;
+using Logly.Models;
 
-namespace logly.Logging
+namespace Logly.Logging
 {
     internal class Logger
     {
