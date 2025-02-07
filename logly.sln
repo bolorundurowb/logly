@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logly", "logly\logly.csproj", "{9772D8DD-B364-4C6A-9740-6A06067A5E79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logly", "Logly\Logly.csproj", "{9772D8DD-B364-4C6A-9740-6A06067A5E79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
