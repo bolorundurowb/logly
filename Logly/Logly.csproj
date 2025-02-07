@@ -16,6 +16,7 @@
         <PackageReleaseNotes>
             - update dependencies
             - add newer .NET version support
+            - remove older targets like ASP.NET 1 and 2
         </PackageReleaseNotes>
         <Copyright>©2020-2025, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
