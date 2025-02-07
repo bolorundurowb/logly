@@ -2,7 +2,7 @@
 
 internal class Request
 {
-    public string Method { get; set; }
+    public string Method { get; set; } = null!;
 
-    public string Url { get; set; }
+    public string Url { get; set; } = null!;
 }

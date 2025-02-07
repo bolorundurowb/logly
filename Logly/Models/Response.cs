@@ -8,31 +8,13 @@ internal class Response
 
     public double ResponseTime { get; set; }
 
-    public ConsoleColor StatusCodeColor
-    {
-        get
+    public ConsoleColor StatusCodeColor =>
+        StatusCode switch
         {
-            if (StatusCode < 200)
-            {
-                return ConsoleColor.White;
-            }
-
-            if (StatusCode >= 200 && StatusCode < 300)
-            {
-                return ConsoleColor.Green;
-            }
-
-            if (StatusCode >= 300 && StatusCode < 400)
-            {
-                return ConsoleColor.DarkBlue;
-            }
-
-            if (StatusCode >= 400 && StatusCode < 500)
-            {
-                return ConsoleColor.Yellow;
-            }
-
-            return ConsoleColor.Red;
-        }
-    }
+            < 200 => ConsoleColor.White,
+            >= 200 and < 300 => ConsoleColor.Green,
+            >= 300 and < 400 => ConsoleColor.DarkBlue,
+            >= 400 and < 500 => ConsoleColor.Yellow,
+            _ => ConsoleColor.Red
+        };
 }

@@ -9,17 +9,10 @@ namespace Logly;
 /// <summary>
 /// Request and Response logging middleware
 /// </summary>
-public class LoglyMiddleware
+public class LoglyMiddleware(RequestDelegate next)
 {
     internal static LoggerOptions LoggerOptions { get; set; }
-    private readonly RequestDelegate _next;
-    private readonly Logger _logger;
-
-    public LoglyMiddleware(RequestDelegate next)
-    {
-        _next = next;
-        _logger = new Logger();
-    }
+    private readonly Logger _logger = new();
 
     /// <summary>
     /// Method invoked in the http process
@@ -35,35 +28,33 @@ public class LoglyMiddleware
         // track a reference to the response body
         var originalResponseStream = context.Response.Body;
 
-        using (var loggableResponseStream = new MemoryStream())
+        using var loggableResponseStream = new MemoryStream();
+        context.Response.Body = loggableResponseStream;
+
+        try
         {
-            context.Response.Body = loggableResponseStream;
+            // retrieve request details
+            var request = FormatRequest(context.Request);
 
-            try
-            {
-                // retrieve request details
-                var request = FormatRequest(context.Request);
+            // continue down the pipeline
+            await next(context);
 
-                // continue down the pipeline
-                await _next(context);
+            // stop timer
+            stopWatch.Stop();
 
-                // stop timer
-                stopWatch.Stop();
+            // retrieve response details
+            var response = FormatResponse(context.Response, context.Response.StatusCode);
+            response.ResponseTime = stopWatch.ElapsedMilliseconds;
 
-                // retrieve response details
-                var response = FormatResponse(context.Response, context.Response.StatusCode);
-                response.ResponseTime = stopWatch.ElapsedMilliseconds;
+            // log the request and response details
+            _logger.Log(request, response);
 
-                // log the request and response details
-                _logger.Log(request, response);
-
-                await context.Response.Body.CopyToAsync(originalResponseStream);
-            }
-            finally
-            {
-                // reassign the original stream. necessary to write exceptions to the stream
-                context.Response.Body = originalResponseStream;
-            }
+            await context.Response.Body.CopyToAsync(originalResponseStream);
+        }
+        finally
+        {
+            // reassign the original stream. necessary to write exceptions to the stream
+            context.Response.Body = originalResponseStream;
         }
     }
 
@@ -72,14 +63,11 @@ public class LoglyMiddleware
     /// </summary>
     /// <param name="request">The current HTTP request instance</param>
     /// <returns>A request model object with the necessary data</returns>
-    private static Request FormatRequest(HttpRequest request)
+    private static Request FormatRequest(HttpRequest request) => new()
     {
-        return new Request
-        {
-            Url = $"{request.Path}{request.QueryString}",
-            Method = request.Method
-        };
-    }
+        Url = $"{request.Path}{request.QueryString}",
+        Method = request.Method
+    };
 
     /// <summary>
     /// Extracts the required response data from the http reponse object

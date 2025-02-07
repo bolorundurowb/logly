@@ -13,16 +13,14 @@ public static class LoglyMiddlewareExtensions
     /// </summary>
     /// <param name="builder">The application builder instance</param>
     /// <returns>The application builder instance</returns>
-    public static IApplicationBuilder UseLogly(this IApplicationBuilder builder)
-    {
-        return UseLogly(builder, opts =>
+    public static IApplicationBuilder UseLogly(this IApplicationBuilder builder) =>
+        UseLogly(builder, opts =>
             opts
                 .AddRequestMethod()
                 .AddUrl()
                 .AddStatusCode()
         );
-    }
-        
+
     /// <summary>
     /// Add logic using settings specified by the end user
     /// </summary>
@@ -33,15 +31,11 @@ public static class LoglyMiddlewareExtensions
     public static IApplicationBuilder UseLogly(this IApplicationBuilder builder, Action<LoggerOptionsBuilder> action)
     {
         if (builder == null)
-        {
             throw new ArgumentNullException(nameof(builder));
-        }
 
         if (action == null)
-        {
             throw new ArgumentNullException(nameof(action));
-        }
-            
+
         var optionsBuilder = new LoggerOptionsBuilder();
         action(optionsBuilder);
 
