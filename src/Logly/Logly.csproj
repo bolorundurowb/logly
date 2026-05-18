@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>3.0.0</Version>
-        <Authors>Bolorunduro Winner-Timothy</Authors>
+        <Authors>Winner-Timothy Bolorunduro</Authors>
         <Description>A library to log request and response data in the format of morgan for NodeJS</Description>
         <PackageId>Logly</PackageId>
         <PackageTags>log,logly,logger,asp.net,core,morgan</PackageTags>
@@ -12,13 +12,12 @@
         <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Copyright>Winner-Timothy Bolorunduro © 2020</Copyright>
         <PackageReleaseNotes>
             - update dependencies
             - add newer .NET version support
             - remove older targets like ASP.NET 1 and 2
         </PackageReleaseNotes>
-        <Copyright>©2020-2025, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
+        <Copyright>©2020-2026, Winner-Timothy Bolorunduro. All Rights reserved.</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <AssemblyName>Logly</AssemblyName>
         <RootNamespace>Logly</RootNamespace>
@@ -27,10 +26,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.10" />
     </ItemGroup>
 </Project>
