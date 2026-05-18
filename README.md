@@ -1,6 +1,6 @@
 # Logly
 
-[![Build Logly Project](https://github.com/bolorundurowb/logly/actions/workflows/build.yml/badge.svg)](https://github.com/bolorundurowb/logly/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ![NuGet Version](https://img.shields.io/nuget/v/logly)
+[![Build, Test & Coverage](https://github.com/bolorundurowb/shortid/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/bolorundurowb/shortid/actions/workflows/build-and-test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ![NuGet Version](https://img.shields.io/nuget/v/logly)
 
 Logly is an ASP.NET Core middleware library for structured HTTP request and response logging. It is inspired by [morgan](https://github.com/expressjs/morgan) for Node.js and gives you control over exactly what gets logged, with minimal setup.
 
@@ -25,7 +25,7 @@ Install-Package Logly
 ## Supported Frameworks
 
 - .NET Core 3.1
-- .NET 5, 6, 7, 8, 9
+- .NET 5, 6, 7, 8, 9, 10
 
 ## Prerequisites
 
